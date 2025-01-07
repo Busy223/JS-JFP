@@ -1,0 +1,9 @@
+div{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(45deg, #690d14, #EF54CC);
+    padding: 20px;
+    border-radius: 15px;
+    color: bisque;
+    width: 300px;
+}
