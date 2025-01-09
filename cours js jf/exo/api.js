@@ -70,17 +70,17 @@ const contactApiPoke =  async () => {
             console.error("erreur lors de la recup de données: " , pokedata.statusText);
             return;
         }
-        const modifdata = await pokedata.json();
-        console.log(modifdata);
-        console.log(modifdata.results);
-        console.log(modifdata.results[0]);
+        const convertJsonEnJsPokeApi1 = await pokedata.json();
+        console.log(convertJsonEnJsPokeApi1);
+        console.log(convertJsonEnJsPokeApi1.results);
+        console.log(convertJsonEnJsPokeApi1.results[0]);
         
-        for(let i = 0 ;i< modifdata.results.length ; i++ ){
+        for(let i = 0 ;i< convertJsonEnJsPokeApi1.results.length ; i++ ){
             let newDiv = document.createElement("div");
             
-            // apiDiv3.innerText += modifdata.results[i].name ;
-            // apiDiv3.innerText += modifdata.results[i].url ;
-            newDiv.innerText = `Nom: ${modifdata.results[i].name}`;
+            // apiDiv3.innerText += convertJsonEnJsPokeApi1.results[i].name ;
+            // apiDiv3.innerText += convertJsonEnJsPokeApi1.results[i].url ;
+            newDiv.innerText = `Nom: ${convertJsonEnJsPokeApi1.results[i].name}`;
             document.body.appendChild(newDiv); 
         }
             
@@ -131,15 +131,15 @@ const contactApiPoke2 =  async () => {
             console.error("erreur lors de la recup de données: " , pokedata.statusText);
             return;
         }
-        const modifdata2 = await pokedata2.json();
-        console.log(modifdata2);
-        console.log(modifdata2.results);
-        console.log(modifdata2[1].sprites);
-        for(let i = 0 ; i< modifdata2.length ; i++ ){
+        const convertJsonEnJsPokeApi2 = await pokedata2.json();
+        console.log(convertJsonEnJsPokeApi2);
+        console.log(convertJsonEnJsPokeApi2.results);
+        console.log(convertJsonEnJsPokeApi2[1].sprites);
+        for(let i = 0 ; i< convertJsonEnJsPokeApi2.length ; i++ ){
             let newDivpoke = document.createElement("div");
             let newimgpoke = document.createElement("img");
-            newimgpoke.setAttribute("src" , `${modifdata2[i].sprites.regular}` )
-            newDivpoke.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types.map((type)=>{
+            newimgpoke.setAttribute("src" , `${convertJsonEnJsPokeApi2[i].sprites.regular}` )
+            newDivpoke.innerText = `Name:${convertJsonEnJsPokeApi2[i].name.fr} , Poids: ${convertJsonEnJsPokeApi2[i].weight} , Taille: ${convertJsonEnJsPokeApi2[i].height} , Types: ${convertJsonEnJsPokeApi2[i].types.map((type)=>{
                 return type.name;
         })}`;
 
