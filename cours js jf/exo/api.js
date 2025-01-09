@@ -113,8 +113,8 @@ const contactApiPoke2 =  async () => {
             let newDiv = document.createElement("div");
             let newimg = document.createElement("img");
             newimg.setAttribute("src" , `${modifdata2[i].sprites.regular}` )
-            newDiv.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types.name}
-            `;
+            newDiv.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types.name}`;
+            
             document.body.appendChild(newDiv); 
             newDiv.appendChild(newimg);
         }
