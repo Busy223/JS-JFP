@@ -94,6 +94,34 @@ const contactApiPoke =  async () => {
 contactApiPoke();
 
 
+//!correction 
+// import DOMPurify from "dompurify";
+
+// de base une ƒ° => est anonyme, astuce pour désanonymiser, on la stocke dans une variable
+const pokemonApiContact = async () => {
+    const pokemonListe = document.getElementById('pokeList');
+    console.log(pokemonListe);
+    //Data va récup Toutes les données de l'api
+    const pokemonData = await fetch('https://pokeapi.co/api/v2/pokemon');
+    console.log('pokemonData',pokemonData);
+    //Plutot que de Travailler sur la réponse, on va la transformé pour 
+    //qu'elle deviennt un OBJET JS (+ pratique)
+    const pokemonDataTransformed = await pokemonData.json();
+    console.log('pokemonDataTransformed',pokemonDataTransformed);
+    console.log(pokemonDataTransformed.results[0].name);
+    // Boucle pour parcourir le tableau results dans la réponse
+    pokemonDataTransformed.results.forEach(unPokemon => {
+        let listElement = document.createElement('h3');
+        listElement.innerText = unPokemon.name;
+        pokemonListe.append(listElement);
+    });
+};
+pokemonApiContact();
+
+
+
+
+
 const contactApiPoke2 =  async () => {
     try{
         const pokedata2 = await fetch('https://tyradex.vercel.app/api/v1/gen/9');
@@ -109,13 +137,13 @@ const contactApiPoke2 =  async () => {
         console.log(modifdata2[1].sprites);
         
         for(let i = 0 ; i< modifdata2.length ; i++ ){
-            let newDiv = document.createElement("div");
-            let newimg = document.createElement("img");
-            newimg.setAttribute("src" , `${modifdata2[i].sprites.regular}` )
-            newDiv.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types.name}`;
+            let newDivpoke = document.createElement("div");
+            let newimgpoke = document.createElement("img");
+            newimgpoke.setAttribute("src" , `${modifdata2[i].sprites.regular}` )
+            newDivpoke.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types[0].name}`;
 
-            document.body.appendChild(newDiv); 
-            newDiv.appendChild(newimg);
+            document.body.appendChild(newDivpoke); 
+            newDivpoke.appendChild(newimgpoke);
         }
             
             
