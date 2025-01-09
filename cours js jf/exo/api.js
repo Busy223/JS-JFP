@@ -135,12 +135,13 @@ const contactApiPoke2 =  async () => {
         console.log(modifdata2);
         console.log(modifdata2.results);
         console.log(modifdata2[1].sprites);
-        
         for(let i = 0 ; i< modifdata2.length ; i++ ){
             let newDivpoke = document.createElement("div");
             let newimgpoke = document.createElement("img");
             newimgpoke.setAttribute("src" , `${modifdata2[i].sprites.regular}` )
-            newDivpoke.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types[0].name}`;
+            newDivpoke.innerText = `Name:${modifdata2[i].name.fr} , Poids: ${modifdata2[i].weight} , Taille: ${modifdata2[i].height} , Types: ${modifdata2[i].types.map((type)=>{
+                return type.name;
+        })}`;
 
             document.body.appendChild(newDivpoke); 
             newDivpoke.appendChild(newimgpoke);
