@@ -9,14 +9,11 @@ const userData = {
     img:'https://www.boredpanda.com/blog/wp-content/uploads/2022/06/funny-low-cost-cosplay-pics-62a744d39c80a__700.jpg'
   };
 
-  
   const div = document.querySelector("div")
-  
   const username = document.createElement("h2");
   username.innerText = userData.name;
   div.appendChild(username);
   div.style.backgroundColor = "linear-gradient(45deg, #690d14, #EF54CC)";
-  
 
 const usermail = document.createElement("p");
 usermail.innerText = userData.email;

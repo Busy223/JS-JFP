@@ -44,6 +44,5 @@ contactApi();
 
 
 //ne fonctionne pas  donc try de on click sur le bouton 
-document.querySelector('button').addEventListener('click', contactApi()){
-    
-};
+// document.querySelector('button').addEventListener('click', contactApi()){    
+// };
