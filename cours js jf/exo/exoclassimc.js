@@ -10,20 +10,21 @@ class Imc {
     //* Le calcul poid diviser par taille **2 **2=au carré
     calculImc() {
         // TODO
-        this.imc = poidsUser / (tailleUser**2)
+        this.imc = this.poidsUser / (this.tailleUser ** 2);
 
     }
     
     getProfileInfo() {
         console.log('Bonjour ',this);
         return `son nom : ${this.nameUser}
-                (son poids : ${this.poidsUserUser}
+                (son poids : ${this.poidsUser}
                 sa taille : ${this.tailleUser})
                 a un IMC de : ${this.imc})`;
         }
     //* Affichage
     display() {
         // TODO
+        console.log(this.getProfileInfo());
     }
 }
 //* progr principal -> on fait l'injection des données
@@ -39,11 +40,15 @@ let list = [
 
 
 const exempleUser = new Imc (list[0],);
-console.log(exempleUser.getprofil());
-// list.???((uneInstanceImc) => uneInstanceImc.display());
 
-    // Attribut en outMode
-    this.contact = paramPhoneUser + paramMailUser;
-    this.resume = this.getProfileInfo();
-   
-   
+
+
+function calculeImcSurTab(array) {
+    array.forEach((user) => {
+        user.calculImc();
+        user.getProfileInfo();
+    });
+}
+
+
+console.log(calculeImcSurTab(list));
