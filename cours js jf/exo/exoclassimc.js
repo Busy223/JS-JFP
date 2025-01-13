@@ -46,7 +46,7 @@ const exempleUser = new Imc (list[0],);
 function calculeImcSurTab(array) {
     array.forEach((user) => {
         user.calculImc();
-        user.getProfileInfo();
+        user.display();
     });
 }
 
