@@ -5,12 +5,13 @@ class Imc {
         this.poidsUser = poids;
         this.tailleUser = taille;
 
+
     // TODO 
     }
     //* Le calcul poid diviser par taille **2 **2=au carré
     calculImc() {
         // TODO
-        this.imc = this.poidsUser / (this.tailleUser ** 2);
+        return (this.imc = this.poidsUser / this.tailleUser ** 2).toFixed(2);
 
     }
     
