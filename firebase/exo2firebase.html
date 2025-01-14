@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/javascript.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+    <style>
+        /*Edit*/
+        #edit-user-module {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
+    </nav>
+    <!-- Main Content -->
+    <div id="app" class="container-fluid min-vh-100">
+        <h1>Ici on s'exerce sur Firebase en JS</h1>
+        <!-- Section de héros main call to action -->
+        <div class="container-fluid p-3">
+            <div class="row">
+                <!-- Form Add -->
+                <div class="col-6  p-3">
+                    <form class="m-3 bg-info p-3" id="add-user-form">
+                        <h2>Formulaire d'ajout</h2>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Name</label>
+                            <input data-key="name" type="text" class="user-input form-control" placeholder="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Age</label>
+                            <input data-key="age" type="text" class="user-input form-control" placeholder="age">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Mail</label>
+                            <input data-key="mail" type="email" class="user-input form-control" placeholder="email">
+                        </div>
+                        <button id="add-user-btn" type="submit" class="btn btn-primary">Ajouter</button>
+                    </form>
+                    <!-- Form Update -->
+                    <form class="m-3 bg-primary p-3" id="edit-user-module">
+                        <h2 class="text-white">Formulaire d'édition</h2>
+                        <div class="mb-3">
+                            <input data-key="name" type="text" class="edit-userid form-control" hidden>
+                            <label for="exampleFormControlInput1" class="form-label">Name</label>
+                            <input data-key="name" type="text" class="edit-user-input form-control" placeholder="name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Age</label>
+                            <input data-key="age" type="text" class="edit-user-input form-control" placeholder="age">
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Mail</label>
+                            <input data-key="mail" type="email" class="edit-user-input form-control"
+                                placeholder="email">
+                        </div>
+                        <button id="edit-user-btn" type="submit" class="btn btn-success">Modifier</button>
+                    </form>
+                </div>
+                <div class="col-6 bg-light p-3">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            Détails Utilisateur
+                        </div>
+                        <div id="user-detail" class="card-body">
+                            <h5 class="card-title">Veuillez sélectionner un utilisateur</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col m-3">
+                    <h3>Liste des Utilisateurs : </h3>
+                    <ul id="user-list" class="list-group"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer></footer>
+    <!-- firebase sdk link goes here -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-database.js"></script>
+    <!-- Scripts -->
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="exo-107-dom-firebase.js"></script>
+</body>
+
+</html>
