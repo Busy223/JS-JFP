@@ -21,6 +21,7 @@ const contactApi = async () => {
             info.style.marginTop = "16px" ;
             info.style.marginBottom = "16px" ;
             info.style.padding = "16px 12px 24px 12px" ;
+            info.style.border ="3px, solid, grey";//oublie avant la pause rajout apres la pause
         cardinfo.appendChild(info);
 
         function addInfo(){
@@ -58,3 +59,6 @@ const contactApi = async () => {
 };
 
 contactApi();
+
+
+//! correction
